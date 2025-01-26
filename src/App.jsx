@@ -1,10 +1,11 @@
 import React from "react";
+import Form from "./components/Form";
 
 const App = () => {
   return (
-    <div>
-      <p className="text-4xl text-red-500">colle</p>
-    </div>
+    <>
+      <Form />
+    </>
   );
 };
 
