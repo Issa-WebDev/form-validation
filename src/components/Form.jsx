@@ -11,7 +11,7 @@ const Form = () => {
   });
 
   const [errorColor, setErrorColor] = useState("");
-  const [errorMessage, setErrorMessage] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,16 +68,18 @@ const Form = () => {
   };
 
   return (
-    <div
-      id="contenair"
-      onClick={(e) => e.target.id === "contenair" && setShowForm(false)}
-      className="flex items-center justify-center h-screen"
-    >
+    <div className="flex items-center justify-center h-screen">
       {showForm ? (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col w-[400px] gap-6 bg-white shadow-xl rounded-lg p-10"
+          className="relative flex flex-col border-2 border-gray-200 w-[400px] gap-6 bg-white shadow-xl rounded-lg p-10"
         >
+          <button
+            onClick={() => setShowForm((prev) => !prev)}
+            className="absolute top-0 right-6 cursor-pointer text-3xl"
+          >
+            x
+          </button>
           <h1 className="text-xl font-bold text-center">login</h1>
           <div>
             <input
@@ -144,7 +146,7 @@ const Form = () => {
           <h1 className="text-xl font-extrabold text-center">Login here</h1>
           <button
             className="font-bold px-6 py-2 rounded-md bg-teal-600 text-white cursor-pointer"
-            onClick={() => setShowForm(true)}
+            onClick={() => setShowForm((prev) => !prev)}
           >
             Login
           </button>
